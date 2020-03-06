@@ -6,11 +6,11 @@ import java.util.concurrent.FutureTask;
   
 public class CallableTest implements Callable<Integer> {
 
-    public static void main(String[] args) {
-        CallableTest ctt = new CallableTest();
+    public static void main(final String[] args) {
+        final CallableTest ctt = new CallableTest();
         
         //我们可以使用 FutureTask来获得ctt的返回值
-        FutureTask<Integer> ft = new FutureTask<Integer>(ctt);  
+        final FutureTask<Integer> ft = new FutureTask<Integer>(ctt);  
 
         for(int i = 0;i < 10;i++)  
         {  
@@ -25,10 +25,10 @@ public class CallableTest implements Callable<Integer> {
         try  
         {  
             System.out.println("子线程的返回值："+ ft.get());  
-        } catch (InterruptedException e)  
+        } catch (final InterruptedException e)  
         {  
             e.printStackTrace();  
-        } catch (ExecutionException e)  
+        } catch (final ExecutionException e)  
         {  
             e.printStackTrace();  
         }  
